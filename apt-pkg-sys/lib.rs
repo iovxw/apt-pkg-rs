@@ -8,7 +8,7 @@ pub enum PkgDepCache {}
 pub enum PkgPolicy {}
 pub enum PkgSourceList {}
 
-extern {
+extern "C" {
     pub fn init_config() -> bool;
     pub fn init_system() -> bool;
     pub fn pkg_cache_file_new() -> *mut PkgCacheFile;
