@@ -1,0 +1,15 @@
+[package]
+name = "apt-pkg-sys"
+version = "0.1.0"
+authors = ["iovxw <iovxw@outlook.com>"]
+build = "build.rs"
+
+[lib]
+name = "apt_pkg_sys"
+path = "lib.rs"
+
+[dependencies]
+libc = "0.2"
+
+[build-dependencies]
+gcc = "0.3"
