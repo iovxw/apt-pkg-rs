@@ -12,8 +12,8 @@ extern "C" {
     pub fn init_config() -> bool;
     pub fn init_system() -> bool;
     pub fn pkg_cache_file_new() -> *mut PkgCacheFile;
-    pub fn pkg_cache_get_pkg_cache(var: *mut PkgCacheFile) -> *mut PkgCache;
-    pub fn pkg_cache_get_dep_cache(var: *mut PkgCacheFile) -> *mut PkgDepCache;
-    pub fn pkg_cache_get_policy(var: *mut PkgCacheFile) -> *mut PkgPolicy;
-    pub fn pkg_cache_get_source_list(var: *mut PkgCacheFile) -> *mut PkgSourceList;
+    pub fn pkg_cache_file_get_pkg_cache(var: *mut PkgCacheFile) -> *mut PkgCache;
+    pub fn pkg_cache_file_get_dep_cache(var: *mut PkgCacheFile) -> *mut PkgDepCache;
+    pub fn pkg_cache_file_get_policy(var: *mut PkgCacheFile) -> *mut PkgPolicy;
+    pub fn pkg_cache_file_get_source_list(var: *mut PkgCacheFile) -> *mut PkgSourceList;
 }

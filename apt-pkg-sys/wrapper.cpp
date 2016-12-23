@@ -13,15 +13,15 @@ rust_fn bool init_system() {
 rust_fn pkgCacheFile *pkg_cache_file_new() {
   return new pkgCacheFile();
 }
-rust_fn pkgCache *pkg_cache_get_pkg_cache(pkgCacheFile *self) {
+rust_fn pkgCache *pkg_cache_file_get_pkg_cache(pkgCacheFile *self) {
   return self->GetPkgCache();
 }
-rust_fn pkgDepCache *pkg_cache_get_dep_cache(pkgCacheFile *self) {
+rust_fn pkgDepCache *pkg_cache_file_get_dep_cache(pkgCacheFile *self) {
   return self->GetDepCache();
 }
-rust_fn pkgPolicy *pkg_cache_get_policy(pkgCacheFile *self) {
+rust_fn pkgPolicy *pkg_cache_file_get_policy(pkgCacheFile *self) {
   return self->GetPolicy();
 }
-rust_fn pkgSourceList *pkg_cache_get_source_list(pkgCacheFile *self) {
+rust_fn pkgSourceList *pkg_cache_file_get_source_list(pkgCacheFile *self) {
   return self->GetSourceList();
 }
