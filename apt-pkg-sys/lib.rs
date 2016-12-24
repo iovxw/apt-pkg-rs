@@ -11,6 +11,7 @@ pub enum PkgSourceList {}
 extern "C" {
     pub fn init_config() -> bool;
     pub fn init_system() -> bool;
+
     pub fn pkg_cache_file_new() -> *mut PkgCacheFile;
     pub fn pkg_cache_file_get_pkg_cache(var: *mut PkgCacheFile) -> *mut PkgCache;
     pub fn pkg_cache_file_get_dep_cache(var: *mut PkgCacheFile) -> *mut PkgDepCache;
