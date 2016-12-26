@@ -13,6 +13,9 @@ rust_fn bool init_system() {
 rust_fn pkgCacheFile *pkg_cache_file_new() {
   return new pkgCacheFile();
 }
+rust_fn void pkg_cache_file_delete(pkgCacheFile *self) {
+  delete self;
+}
 rust_fn pkgCache *pkg_cache_file_get_pkg_cache(pkgCacheFile *self) {
   return self->GetPkgCache();
 }
@@ -24,4 +27,24 @@ rust_fn pkgPolicy *pkg_cache_file_get_policy(pkgCacheFile *self) {
 }
 rust_fn pkgSourceList *pkg_cache_file_get_source_list(pkgCacheFile *self) {
   return self->GetSourceList();
+}
+
+rust_fn void pkg_cache_delete(pkgCache *self) {
+  delete self;
+}
+rust_fn pkgCache::PkgIterator pkg_cache_pkg_begin(pkgCache *self) {
+  return self->PkgBegin();
+}
+
+rust_fn void pkg_cache_pkg_iterator_delete(pkgCache::PkgIterator *self) {
+  delete self;
+}
+rust_fn pkgCache::PkgIterator pkg_cache_pkg_iterator_plusplus(pkgCache::PkgIterator *self) {
+  return *self++;
+}
+rust_fn const char *pkg_cache_pkg_iterator_name(pkgCache::PkgIterator *self) {
+  return self->Name();
+}
+rust_fn bool pkg_cache_pkg_iterator_end(pkgCache::PkgIterator *self) {
+  return self->end();
 }
