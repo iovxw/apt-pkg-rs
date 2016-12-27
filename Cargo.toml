@@ -4,3 +4,5 @@ version = "0.1.0"
 authors = ["iovxw <iovxw@outlook.com>"]
 
 [dependencies]
+libc = "0.2"
+apt-pkg-sys = { version = "0.1", path = "apt-pkg-sys" }
