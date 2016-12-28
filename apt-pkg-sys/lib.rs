@@ -1,13 +1,19 @@
 extern crate libc;
 
-use libc::{c_int, c_uint, c_void, c_char};
+use libc::{c_long, c_void, c_char};
 
 pub enum PkgCacheFile {}
 pub enum PkgCache {}
 pub enum PkgDepCache {}
 pub enum PkgPolicy {}
 pub enum PkgSourceList {}
-pub enum PkgIterator {}
+
+#[repr(C)]
+pub struct PkgIterator {
+    pkg: *mut c_void,
+    owner: *mut PkgCache,
+    hash_index: c_long,
+}
 
 extern "C" {
     pub fn init_config() -> bool;
